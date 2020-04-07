@@ -144,9 +144,7 @@ function changeNoteImage() {
 		tempString = tempString + "Sharp";
 		
 	}
-	if(tempString.includes("D")){
-		randNum = 2;
-	}
+	
     var url = "url(Pitch_Detector_files/" + tempString + "Note" + randNum + ".png" + ")";
     noteImageElem.style.backgroundSize = "75%";
 	noteImageElem.style.backgroundImage = url;
