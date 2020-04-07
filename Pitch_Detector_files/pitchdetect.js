@@ -138,8 +138,15 @@ function hideNote(){
 
 function changeNoteImage() {
     var randNum = Math.floor(Math.random() * 2) + 1;
-	randNum = 1;
     var tempString = playMeElem.innerHTML;
+	if(tempString.includes("#")){
+		tempString = tempString.substring(0, tempString.length - 1);
+		tempString = tempString + "Sharp";
+		
+	}
+	if(tempString.includes("G")){
+		randNum = 2;
+	}
     var url = "url(Pitch_Detector_files/" + tempString + "Note" + randNum + ".png" + ")";
     noteImageElem.style.backgroundSize = "75%";
 	noteImageElem.style.backgroundImage = url;
